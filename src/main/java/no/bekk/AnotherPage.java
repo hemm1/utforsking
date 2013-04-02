@@ -18,4 +18,6 @@ public class AnotherPage extends WebPage {
                 new UserPanel("userPanel", persons)
         );
     }
+
+    //TODO: Lag en basepage som har noe css som i hvert fall legger til noe padding eller margin på toppen og til venstre. Alle websider skal arve fra denne pagen.
 }
