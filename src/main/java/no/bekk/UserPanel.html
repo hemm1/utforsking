@@ -21,10 +21,25 @@
     <a href="#" wicket:id="addLink">Legg til person</a>
     <a href="#" wicket:id="removeLink">Fjern person</a>
 
-    <form wicket:id="addPersonForm">
-        <input wicket:id="firstName" type="text" />
-        <input wicket:id="lastName" type="text" />
-        <input wicket:id="emailAddress" type="email" />
+    <form class="addPersonForm" wicket:id="addPersonForm">
+        <label>
+            First name:
+            <span wicket:id="firstNameBorder">
+                <input wicket:id="firstName" type="text"/>
+            </span>
+        </label>
+        <label>
+            Last name:
+            <span wicket:id="lastNameBorder">
+                <input wicket:id="lastName" type="text"/>
+            </span>
+        </label>
+        <label>
+            E-mail address:
+            <span wicket:id="emailAddressBorder">
+                <input wicket:id="emailAddress" type="email"/>
+            </span>
+        </label>
         <input wicket:id="submit" type="submit">Legg til</input>
     </form>
 </wicket:panel>

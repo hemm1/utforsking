@@ -7,6 +7,7 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.EmailTextField;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
+import org.apache.wicket.markup.html.form.validation.FormComponentFeedbackBorder;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.PropertyListView;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
@@ -49,12 +50,15 @@ public class UserPanel extends Panel {
 
         //TODO: sett feltene required og gi ordentlige tilbakemeldinger (med sånn rød kant gjerne). Sett notEmpty-krav på navnene.
 
-        //TODO: Kanskje lag sånne annotations som Johannes lagde. Mulig jeg slipper ved å bare legge til Parent i ajaxRequestTarget
+        //TODO: Kanskje lag sånne annotations som vi hadde på TMS for å slippe å sende med noe man kan legge til ajaxRequestTarget. Mulig jeg slipper ved å bare legge til Parent i ajaxRequestTarget
 
+        FormComponentFeedbackBorder firstNameBorder = new FormComponentFeedbackBorder("firstNameBorder");
+        FormComponentFeedbackBorder lastNameBorder = new FormComponentFeedbackBorder("lastNameBorder");
+        FormComponentFeedbackBorder emailAddressBorder = new FormComponentFeedbackBorder("emailAddressBorder");
         addPersonForm.add(
-                new TextField<String>("firstName"),
-                new TextField<String>("lastName"),
-                new EmailTextField("emailAddress"),
+                firstNameBorder.add(new TextField<String>("firstName").setRequired(true)),
+                lastNameBorder.add(new TextField<String>("lastName").setRequired(true)),
+                emailAddressBorder.add(new EmailTextField("emailAddress").setRequired(true)),
                 new AjaxButton("submit") {
                     @Override
                     protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
@@ -69,9 +73,8 @@ public class UserPanel extends Panel {
                     @Override
                     protected void onError(AjaxRequestTarget target, Form<?> form) {
                         super.onError(target, form);
-                        System.err.println("Error in form submitting!");
-                        error("Error in form submitting");
                         target.add(feedback);
+                        target.add(UserPanel.this); //For å vise stjerne ved siden av feltene som det er noe feil med
                     }
                 }
         );

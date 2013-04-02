@@ -26,4 +26,10 @@
     list-style-type: none;
 }
 
+.addPersonForm label {
+    display: block;
+    clear: both;
+    margin: 5px;
+}
+
 /*TODO: Lag mindre bredde på boksene. De trenger ikke å gå over hele siden */
