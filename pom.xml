@@ -24,8 +24,7 @@
 	<artifactId>utforsking</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-		<!-- TODO project name  -->
-	<name>quickstart</name>
+	<name>utforsking</name>
 	<description>Peter som prøver seg litt frem da vøtt</description>
 	<!--
 		<organization>
