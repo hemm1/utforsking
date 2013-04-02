@@ -48,8 +48,6 @@ public class UserPanel extends Panel {
         //TODO: Trekk ut addPersonForm til et Panel og skriv egne tester for det.
         final Form<Person> addPersonForm = new Form<Person>("addPersonForm", new CompoundPropertyModel<Person>(new Person()));
 
-        //TODO: sett feltene required og gi ordentlige tilbakemeldinger (med sånn rød kant gjerne). Sett notEmpty-krav på navnene.
-
         //TODO: Kanskje lag sånne annotations som vi hadde på TMS for å slippe å sende med noe man kan legge til ajaxRequestTarget. Mulig jeg slipper ved å bare legge til Parent i ajaxRequestTarget
 
         FormComponentFeedbackBorder firstNameBorder = new FormComponentFeedbackBorder("firstNameBorder");
@@ -99,8 +97,13 @@ public class UserPanel extends Panel {
                 if (!personList.isEmpty()) {
                     personList.remove(personList.size() - 1);
                     ajaxRequestTarget.add(UserPanel.this);
-                    setVisibilityAllowed(!personList.isEmpty());
                 }
+            }
+
+            @Override
+            protected void onConfigure() {
+                super.onConfigure();
+                setVisibilityAllowed(!personList.isEmpty());
             }
         });
     }
