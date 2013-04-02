@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<body>
+
+<wicket:head>
+    <wicket:link>
+        <link href="UserPanel.css" rel="stylesheet" type="text/css"/>
+    </wicket:link>
+</wicket:head>
+
+<wicket:panel>
+    <div class="feedback" wicket:id="feedback"> Her kommer det noe feedback</div>
+    <div class="personContainer">
+        <wicket:container wicket:id="personList">
+            <span wicket:id="firstName">fornavn</span>
+            <span wicket:id="lastName">etternavn</span>
+            <div class="email" wicket:id="emailAddress">e-postadresse</div>
+        </wicket:container>
+    </div>
+
+    <a href="#" wicket:id="addLink">Legg til person</a>
+    <a href="#" wicket:id="removeLink">Fjern person</a>
+
+    <form wicket:id="addPersonForm">
+        <input wicket:id="firstName" type="text" />
+        <input wicket:id="lastName" type="text" />
+        <input wicket:id="emailAddress" type="email" />
+        <input wicket:id="submit" type="submit">Legg til</input>
+    </form>
+</wicket:panel>
+
+</body>
+</html>

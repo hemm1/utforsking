@@ -1,0 +1,29 @@
+.personContainer {
+    border: 2px solid #092E67;
+    border-radius: 7px;
+    padding: 2px;
+    margin: 10px;
+    font-family: helvetica,serif;
+}
+
+.email {
+    border-bottom: 1px solid;
+}
+
+.feedbackPanel {
+    border-radius: 6px;
+}
+
+.feedbackPanelINFO {
+    background-color: #adff2f;
+}
+
+.feedbackPanelERROR {
+   background-color: #cd5c5c;
+}
+
+.feedback ul {
+    list-style-type: none;
+}
+
+/*TODO: Lag mindre bredde på boksene. De trenger ikke å gå over hele siden */
