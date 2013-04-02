@@ -23,8 +23,8 @@ public class UserPanelTest {
     public void setUp() {
         wicketTester = new WicketTester();
         personList = new ArrayList<Person>();
-        personList.add(new Person("henrik", "hemmen", "stygg@dott.no"));
-        personList.add(new Person("peter", "hemmen", "gris@hest.no"));
+        personList.add(new Person("henrik", "testesen", "måse@dott.no"));
+        personList.add(new Person("peter", "testesen", "heste@svette.no"));
         wicketTester.startComponentInPage(new UserPanel("panel", personList));
     }
 
